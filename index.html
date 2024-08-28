@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game IDE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="top-menu">
+        <button id="runButton"><i class="fas fa-play"></i> Run</button>
+        <button id="stopButton"><i class="fas fa-stop"></i> Stop</button>
+        <button id="saveButton"><i class="fas fa-save"></i> Save</button>
+        <button id="loadButton"><i class="fas fa-folder-open"></i> Load</button>
+    </div>
+    <div class="editor-container">
+        <div class="panel menu" id="menuPanel">
+            <div class="panel-header">
+                <h3>Menu</h3>
+                <button class="minimize-btn"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="category">
+                    <h4>Shapes</h4>
+                    <button class="draggable" data-type="box"><i class="fas fa-square"></i> Box</button>
+                    <button class="draggable" data-type="circle"><i class="fas fa-circle"></i> Circle</button>
+                    <button class="draggable" data-type="line"><i class="fas fa-minus"></i> Line</button>
+                </div>
+                <div class="category">
+                    <h4>Text & Media</h4>
+                    <button class="draggable" data-type="text"><i class="fas fa-font"></i> Text</button>
+                    <button class="draggable" data-type="image"><i class="fas fa-image"></i> Image</button>
+                </div>
+                <div class="category">
+                    <h4>Advanced</h4>
+                    <button class="draggable" data-type="rectangle"><i class="fas fa-square"></i> Rectangle</button>
+                    <button class="draggable" data-type="ellipse"><i class="fas fa-circle"></i> Ellipse</button>
+                    <button class="draggable" data-type="polygon"><i class="fas fa-polygon"></i> Polygon</button>
+                    <button class="draggable" data-type="text"><i class="fas fa-font"></i> Text Box</button>
+                    <button class="draggable" data-type="video"><i class="fas fa-video"></i> Video</button>
+                </div>
+            </div>
+        </div>
+        <div class="workspace" id="workspace"></div>
+        <div class="panel properties" id="propertiesPanel">
+            <div class="panel-header">
+                <h3>Properties</h3>
+                <button class="minimize-btn"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="panel-content" id="objectProperties"></div>
+        </div>
+    </div>
+    <div class="code-editor">
+        <textarea id="code" name="code">
+const obj = document.getElementById('obj_1724804462890'); 
+obj.style.backgroundColor = 'green'; 
+moveInCircle(obj.id, 100, 5, 2);
+        </textarea>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="objectsCodes.js"></script>
+    <script src="properties.js"></script>
+</body>
+</html>
+
